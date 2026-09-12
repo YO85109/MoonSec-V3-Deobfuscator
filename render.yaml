@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: moonsec-deobfuscator
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MAX_UPLOAD_MB
+        value: "5"
+      - key: FLASK_SECRET_KEY
+        generateValue: true
+    healthCheckPath: /
